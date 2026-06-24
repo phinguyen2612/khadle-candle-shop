@@ -15,9 +15,9 @@ export default function Footer() {
           <Link href="/products" className="hover:text-white">
             Sản phẩm
           </Link>
-          <span>Facebook: citymemorycandles</span>
+          <span>Facebook: Khadlé Aterlier</span>
           <span>Instagram: @citymemorycandles</span>
-          <span>Email: hello@citymemory.example</span>
+          <span>Email: Khadlé.Aterlier@gmail.com</span>
         </div>
       </div>
     </footer>

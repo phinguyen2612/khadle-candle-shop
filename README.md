@@ -56,3 +56,21 @@ Checkout goi `POST /api/orders`. API validate du lieu, log don hang ra console v
 ```
 
 Sau nay co the thay phan log trong `app/api/orders/route.ts` bang logic ghi Google Sheet, CRM hoac database.
+
+## Chatbot tu van san pham
+
+Widget chat nam o goc phai man hinh va goi `POST /api/chat`.
+
+- Chatbot chi duoc tra loi dua tren du lieu san pham tu `getProducts()`.
+- API chi gui 3 luot hoi-dap gan nhat len model.
+- Neu chua cau hinh `OPENAI_API_KEY`, API tra loi fallback dua tren data san pham de test UI.
+- Khong dat API key vao client hoac bien `NEXT_PUBLIC_*`.
+
+Them vao `.env.local` khi muon dung OpenAI API:
+
+```bash
+OPENAI_API_KEY="sk-..."
+OPENAI_MODEL="gpt-5.2-mini"
+```
+
+Khi deploy Vercel, vao `Project Settings > Environment Variables` va them hai bien tren.

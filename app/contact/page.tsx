@@ -7,10 +7,10 @@ export const metadata: Metadata = {
 };
 
 const contacts = [
-  ["Facebook", "facebook.com/citymemorycandles"],
+  ["Facebook", "Khadlé Aterlier"],
   ["Instagram", "@citymemorycandles"],
   ["Zalo", "0900 000 000"],
-  ["Email", "hello@citymemory.example"]
+  ["Email", "Khadlé.Aterlier@gmail.com"]
 ];
 
 export default function ContactPage() {

@@ -2,7 +2,7 @@
 
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { formatCurrencyVND } from "@/lib/products";
+import { formatCurrencyVND, ORIGINAL_PRODUCT_PRICE } from "@/lib/products";
 import type { CartItem } from "@/types/cart";
 import SafeImage from "./SafeImage";
 
@@ -17,7 +17,12 @@ export default function CartItemCard({ item }: { item: CartItem }) {
         <p className="mt-1 text-sm text-cocoa/65">
           {item.city} | {item.scent}
         </p>
-        <p className="mt-2 text-sm font-semibold text-cocoa">{formatCurrencyVND(item.price)}</p>
+        <div className="mt-2">
+          <p className="text-xs font-semibold text-cocoa/45 line-through">
+            {formatCurrencyVND(ORIGINAL_PRODUCT_PRICE)}
+          </p>
+          <p className="text-sm font-semibold text-cocoa">{formatCurrencyVND(item.price)}</p>
+        </div>
       </div>
       <div className="flex items-center justify-between gap-4 sm:flex-col sm:items-end">
         <div className="flex h-10 items-center overflow-hidden rounded-full border border-cocoa/15">

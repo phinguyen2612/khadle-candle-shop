@@ -1,6 +1,8 @@
 import type { Product, ProductStatus } from "@/types/product";
 
 const fallbackImage = "/images/z7963231937978_859c7a6eafbeec266f9969dea9a5e661.jpg";
+export const ORIGINAL_PRODUCT_PRICE = 300000;
+export const SALE_PRODUCT_PRICE = 229000;
 
 export const fallbackProducts: Product[] = [
   {
@@ -8,7 +10,7 @@ export const fallbackProducts: Product[] = [
     name: "Cần Thơ Memory Candle",
     city: "Cần Thơ",
     scent: "Lúa non, hoa bưởi, gió sông",
-    price: 199000,
+    price: SALE_PRODUCT_PRICE,
     volume: "200ml",
     description: "Một ngọn nến dịu dàng gợi nhớ những buổi chiều trên bến Ninh Kiều.",
     detail:
@@ -23,7 +25,7 @@ export const fallbackProducts: Product[] = [
     name: "Sài Gòn Night Candle",
     city: "Sài Gòn",
     scent: "Cà phê đen, amber, mưa đêm",
-    price: 229000,
+    price: SALE_PRODUCT_PRICE,
     volume: "220ml",
     description: "Ấm, sâu và có chút náo nhiệt như thành phố sau cơn mưa.",
     detail:
@@ -38,7 +40,7 @@ export const fallbackProducts: Product[] = [
     name: "Đà Lạt Mist Candle",
     city: "Đà Lạt",
     scent: "Thông xanh, lavender, sương sớm",
-    price: 219000,
+    price: SALE_PRODUCT_PRICE,
     volume: "200ml",
     description: "Lạnh nhẹ, sạch và mỏng như lớp sương qua đồi thông.",
     detail:
@@ -115,7 +117,7 @@ function normalizeProduct(record: Record<string, string>): Product {
     name: record.name,
     city: record.city,
     scent: record.scent,
-    price: Number(record.price) || 0,
+    price: SALE_PRODUCT_PRICE,
     volume: record.volume,
     description: record.description,
     detail: record.detail,

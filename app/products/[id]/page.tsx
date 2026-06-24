@@ -2,7 +2,12 @@ import { notFound } from "next/navigation";
 import AddToCartButton from "@/components/AddToCartButton";
 import BuyNowButton from "@/components/BuyNowButton";
 import SafeImage from "@/components/SafeImage";
-import { formatCurrencyVND, getProductById, getProducts } from "@/lib/products";
+import {
+  formatCurrencyVND,
+  getProductById,
+  getProducts,
+  ORIGINAL_PRODUCT_PRICE
+} from "@/lib/products";
 
 export async function generateStaticParams() {
   const products = await getProducts();
@@ -45,7 +50,12 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
           <h1 className="mt-5 font-display text-4xl font-semibold leading-tight text-cocoa sm:text-5xl">
             {product.name}
           </h1>
-          <p className="mt-4 text-lg font-bold text-cocoa">{formatCurrencyVND(product.price)}</p>
+          <div className="mt-4">
+            <p className="text-base font-semibold text-cocoa/45 line-through">
+              {formatCurrencyVND(ORIGINAL_PRODUCT_PRICE)}
+            </p>
+            <p className="text-2xl font-bold text-cocoa">{formatCurrencyVND(product.price)}</p>
+          </div>
           <dl className="mt-6 grid gap-3 text-sm text-cocoa/72 sm:grid-cols-2">
             <div className="rounded-md bg-white/75 p-4">
               <dt className="font-semibold text-cocoa">Mùi hương</dt>

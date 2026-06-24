@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { Product } from "@/types/product";
-import { formatCurrencyVND } from "@/lib/products";
+import { formatCurrencyVND, ORIGINAL_PRODUCT_PRICE } from "@/lib/products";
 import AddToCartButton from "./AddToCartButton";
 import SafeImage from "./SafeImage";
 
@@ -40,8 +40,13 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="text-sm text-cocoa/70">
           <span className="font-semibold text-cocoa">Mùi hương:</span> {product.scent}
         </div>
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-lg font-bold text-cocoa">{formatCurrencyVND(product.price)}</p>
+        <div className="flex items-end justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-cocoa/45 line-through">
+              {formatCurrencyVND(ORIGINAL_PRODUCT_PRICE)}
+            </p>
+            <p className="text-lg font-bold text-cocoa">{formatCurrencyVND(product.price)}</p>
+          </div>
           <span className="text-xs font-medium text-cocoa/55">{product.volume}</span>
         </div>
         <div className="grid gap-2 sm:grid-cols-2">

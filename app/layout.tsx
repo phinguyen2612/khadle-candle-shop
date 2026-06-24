@@ -3,6 +3,7 @@ import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ChatWidget from "@/components/ChatWidget";
 import { CartProvider } from "@/context/CartContext";
 import { cn } from "@/lib/utils";
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            <ChatWidget />
           </div>
         </CartProvider>
       </body>
