@@ -2,26 +2,26 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Giới thiệu | City Memory Candles",
-  description: "Câu truyện thương hiệu nến thơm handmade theo concept ký ức thành phố."
+  description: "Câu chuyện thương hiệu nến thơm handmade theo concept ký ức thành phố."
 };
 
 export default function AboutPage() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-clay">About</p>
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-clay">Giới thiệu</p>
       <h1 className="mt-3 font-display text-4xl font-semibold text-cocoa sm:text-5xl">
-        Mui huong nhu mot tam buu thiep nho
+        Mùi hương như một tấm bưu thiếp nhỏ
       </h1>
       <div className="mt-8 grid gap-6 text-base leading-8 text-cocoa/72 md:grid-cols-2">
         <p>
-          City Memory Candles la concept nen thom handmade lay cam hung tu nhung thanh pho
-          da tung di qua doi song cua moi nguoi. Moi san pham gom lai mot mau ky uc:
-          mui gio song, quan ca phe sau mua, lop suong som tren hang thong.
+          City Memory Candles là concept nến thơm handmade lấy cảm hứng từ những thành phố
+          đã từng đi qua đời sống của mỗi người. Mỗi sản phẩm gom lại một mẩu ký ức:
+          mùi gió sông, quán cà phê sau mưa, lớp sương sớm trên hàng thông.
         </p>
         <p>
-          Nen duoc thiet ke nhu mot mon qua lifestyle nhe nha, phu hop de tang ban be,
-          nguoi than hoac giu rieng cho nhung buoi toi cham lai. MVP nay uu tien trai
-          nghiem mua hang ro rang, de cap nhat san pham tu Google Sheet va san sang mo rong.
+          Nến được thiết kế như một món quà lifestyle nhẹ nhàng, phù hợp để tặng bạn bè,
+          người thân hoặc giữ riêng cho những buổi tối chậm lại. MVP này ưu tiên trải
+          nghiệm mua hàng rõ ràng, dễ cập nhật sản phẩm từ Google Sheet và sẵn sàng mở rộng.
         </p>
       </div>
     </section>

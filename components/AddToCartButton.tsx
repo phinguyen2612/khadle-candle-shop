@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export default function AddToCartButton({
   product,
   className,
-  label = "Them vao gio hang"
+  label = "Thêm vào giỏ hàng"
 }: {
   product: Product;
   className?: string;
@@ -41,7 +41,7 @@ export default function AddToCartButton({
       }}
     >
       <ShoppingBag size={18} />
-      {disabled ? "Het hang" : added ? "Da them" : label}
+      {disabled ? "Hết hàng" : added ? "Đã thêm" : label}
     </button>
   );
 }

@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const product = await getProductById(params.id);
   return {
-    title: product ? `${product.name} | City Memory Candles` : "San pham",
+    title: product ? `${product.name} | City Memory Candles` : "Sản phẩm",
     description: product?.description
   };
 }
@@ -39,7 +39,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
               {product.city}
             </span>
             <span className="rounded-full bg-moss/10 px-3 py-1 text-xs font-semibold text-moss">
-              {isOutOfStock ? "Het hang" : "Con hang"}
+              {isOutOfStock ? "Hết hàng" : "Còn hàng"}
             </span>
           </div>
           <h1 className="mt-5 font-display text-4xl font-semibold leading-tight text-cocoa sm:text-5xl">
@@ -48,17 +48,17 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
           <p className="mt-4 text-lg font-bold text-cocoa">{formatCurrencyVND(product.price)}</p>
           <dl className="mt-6 grid gap-3 text-sm text-cocoa/72 sm:grid-cols-2">
             <div className="rounded-md bg-white/75 p-4">
-              <dt className="font-semibold text-cocoa">Mui huong</dt>
+              <dt className="font-semibold text-cocoa">Mùi hương</dt>
               <dd className="mt-1">{product.scent}</dd>
             </div>
             <div className="rounded-md bg-white/75 p-4">
-              <dt className="font-semibold text-cocoa">Dung tich</dt>
+              <dt className="font-semibold text-cocoa">Dung tích</dt>
               <dd className="mt-1">{product.volume}</dd>
             </div>
           </dl>
           <p className="mt-6 leading-8 text-cocoa/72">{product.detail}</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <AddToCartButton product={product} label="Them vao gio hang" />
+            <AddToCartButton product={product} label="Thêm vào giỏ hàng" />
             <BuyNowButton product={product} />
           </div>
         </div>

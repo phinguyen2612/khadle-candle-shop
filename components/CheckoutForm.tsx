@@ -31,10 +31,10 @@ export default function CheckoutForm() {
     event.preventDefault();
     setError("");
 
-    if (!form.fullName.trim()) return setError("Vui long nhap ho va ten.");
-    if (!form.phone.trim()) return setError("Vui long nhap so dien thoai.");
-    if (!isValidPhone(form.phone)) return setError("So dien thoai chua hop le.");
-    if (!form.address.trim()) return setError("Vui long nhap dia chi nhan hang.");
+    if (!form.fullName.trim()) return setError("Vui lòng nhập họ và tên.");
+    if (!form.phone.trim()) return setError("Vui lòng nhập số điện thoại.");
+    if (!isValidPhone(form.phone)) return setError("Số điện thoại chưa hợp lệ.");
+    if (!form.address.trim()) return setError("Vui lòng nhập địa chỉ nhận hàng.");
 
     setIsSubmitting(true);
     try {
@@ -49,11 +49,11 @@ export default function CheckoutForm() {
         })
       });
       const data = await response.json();
-      if (!response.ok || !data.success) throw new Error(data.message || "Khong the dat hang.");
+      if (!response.ok || !data.success) throw new Error(data.message || "Không thể đặt hàng.");
       clearCart();
       router.push(`/order-success?orderId=${encodeURIComponent(data.orderId)}`);
     } catch (submitError) {
-      setError(submitError instanceof Error ? submitError.message : "Khong the dat hang.");
+      setError(submitError instanceof Error ? submitError.message : "Không thể đặt hàng.");
     } finally {
       setIsSubmitting(false);
     }
@@ -61,11 +61,11 @@ export default function CheckoutForm() {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-md border border-cocoa/10 bg-white p-5 shadow-sm">
-      <h2 className="font-display text-2xl font-semibold text-cocoa">Thong tin nhan hang</h2>
+      <h2 className="font-display text-2xl font-semibold text-cocoa">Thông tin nhận hàng</h2>
       <div className="mt-5 grid gap-4">
         {error ? <ErrorState message={error} /> : null}
         <label className="grid gap-2 text-sm font-semibold text-cocoa">
-          Ho va ten
+          Họ và tên
           <input
             className="focus-ring h-11 rounded-md border border-cocoa/15 px-4 font-normal"
             value={form.fullName}
@@ -73,7 +73,7 @@ export default function CheckoutForm() {
           />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-cocoa">
-          So dien thoai
+          Số điện thoại
           <input
             className="focus-ring h-11 rounded-md border border-cocoa/15 px-4 font-normal"
             value={form.phone}
@@ -81,7 +81,7 @@ export default function CheckoutForm() {
           />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-cocoa">
-          Dia chi nhan hang
+          Địa chỉ nhận hàng
           <textarea
             className="focus-ring min-h-24 rounded-md border border-cocoa/15 px-4 py-3 font-normal"
             value={form.address}
@@ -89,7 +89,7 @@ export default function CheckoutForm() {
           />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-cocoa">
-          Ghi chu
+          Ghi chú
           <textarea
             className="focus-ring min-h-20 rounded-md border border-cocoa/15 px-4 py-3 font-normal"
             value={form.note}
@@ -100,7 +100,7 @@ export default function CheckoutForm() {
           disabled={isSubmitting}
           className="focus-ring h-12 rounded-full bg-cocoa px-6 text-sm font-bold text-white transition hover:bg-ink disabled:cursor-not-allowed disabled:bg-cocoa/45"
         >
-          {isSubmitting ? "Dang dat hang..." : "Dat hang"}
+          {isSubmitting ? "Đang đặt hàng..." : "Đặt hàng"}
         </button>
       </div>
     </form>

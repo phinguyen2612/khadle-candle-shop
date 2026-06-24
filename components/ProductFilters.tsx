@@ -23,7 +23,7 @@ export default function ProductFilters({
         <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-cocoa/45" size={18} />
         <input
           className="focus-ring h-11 w-full rounded-full border border-cocoa/15 bg-white pl-10 pr-4 text-sm text-cocoa placeholder:text-cocoa/40"
-          placeholder="Tim theo ten hoac mui huong"
+          placeholder="Tìm theo tên hoặc mùi hương"
           value={filters.query}
           onChange={(event) => onChange({ ...filters, query: event.target.value })}
         />
@@ -33,7 +33,7 @@ export default function ProductFilters({
         value={filters.city}
         onChange={(event) => onChange({ ...filters, city: event.target.value })}
       >
-        <option value="">Tat ca thanh pho</option>
+        <option value="">Tất cả thành phố</option>
         {cities.map((city) => (
           <option key={city} value={city}>
             {city}
@@ -45,9 +45,9 @@ export default function ProductFilters({
         value={filters.status}
         onChange={(event) => onChange({ ...filters, status: event.target.value })}
       >
-        <option value="">Tat ca trang thai</option>
-        <option value="in_stock">Con hang</option>
-        <option value="out_of_stock">Het hang</option>
+        <option value="">Tất cả trạng thái</option>
+        <option value="in_stock">Còn hàng</option>
+        <option value="out_of_stock">Hết hàng</option>
       </select>
     </div>
   );

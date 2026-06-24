@@ -44,8 +44,8 @@ export default function ProductGrid({
         </div>
       ) : (
         <EmptyState
-          title="Khong tim thay san pham"
-          description="Thu doi tu khoa, thanh pho hoac trang thai san pham de xem them lua chon."
+          title="Không tìm thấy sản phẩm"
+          description="Thử đổi từ khóa, thành phố hoặc trạng thái sản phẩm để xem thêm lựa chọn."
         />
       )}
     </div>

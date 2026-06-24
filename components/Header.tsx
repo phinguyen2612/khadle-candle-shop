@@ -7,10 +7,10 @@ import { useCart } from "@/context/CartContext";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/", label: "Trang chu" },
-  { href: "/products", label: "San pham" },
-  { href: "/about", label: "Gioi thieu" },
-  { href: "/contact", label: "Lien he" }
+  { href: "/", label: "Trang chủ" },
+  { href: "/products", label: "Sản phẩm" },
+  { href: "/about", label: "Giới thiệu" },
+  { href: "/contact", label: "Liên hệ" }
 ];
 
 export default function Header() {
@@ -36,7 +36,7 @@ export default function Header() {
           <Link
             href="/cart"
             className="focus-ring relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-cocoa/15 bg-white text-cocoa shadow-sm transition hover:border-clay"
-            aria-label="Gio hang"
+            aria-label="Giỏ hàng"
           >
             <ShoppingBag size={20} />
             {totalItems > 0 ? (
@@ -48,7 +48,7 @@ export default function Header() {
           <button
             className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-cocoa/15 bg-white text-cocoa md:hidden"
             onClick={() => setIsOpen((value) => !value)}
-            aria-label="Mo menu"
+            aria-label="Mở menu"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>

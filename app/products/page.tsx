@@ -3,8 +3,8 @@ import ProductGrid from "@/components/ProductGrid";
 import { getProducts } from "@/lib/products";
 
 export const metadata: Metadata = {
-  title: "San pham | City Memory Candles",
-  description: "Danh sach nen thom handmade lay tu Google Sheet CSV."
+  title: "Sản phẩm | City Memory Candles",
+  description: "Danh sách nến thơm handmade lấy từ Google Sheet CSV."
 };
 
 export default async function ProductsPage() {
@@ -13,12 +13,12 @@ export default async function ProductsPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-8 max-w-3xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-clay">Collection</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-clay">Bộ sưu tập</p>
         <h1 className="mt-3 font-display text-4xl font-semibold text-cocoa sm:text-5xl">
-          Tat ca san pham
+          Tất cả sản phẩm
         </h1>
         <p className="mt-4 text-sm leading-6 text-cocoa/68">
-          Loc theo thanh pho, trang thai hang va tim nhanh theo ten hoac mui huong.
+          Lọc theo thành phố, trạng thái hàng và tìm nhanh theo tên hoặc mùi hương.
         </p>
       </div>
       <ProductGrid products={products} showFilters />

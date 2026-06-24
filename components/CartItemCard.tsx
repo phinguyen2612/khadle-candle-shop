@@ -24,7 +24,7 @@ export default function CartItemCard({ item }: { item: CartItem }) {
           <button
             className="focus-ring grid h-10 w-10 place-items-center text-cocoa"
             onClick={() => decreaseItem(item.productId)}
-            aria-label="Giam so luong"
+            aria-label="Giảm số lượng"
           >
             <Minus size={16} />
           </button>
@@ -32,7 +32,7 @@ export default function CartItemCard({ item }: { item: CartItem }) {
           <button
             className="focus-ring grid h-10 w-10 place-items-center text-cocoa"
             onClick={() => increaseItem(item.productId)}
-            aria-label="Tang so luong"
+            aria-label="Tăng số lượng"
           >
             <Plus size={16} />
           </button>
@@ -42,7 +42,7 @@ export default function CartItemCard({ item }: { item: CartItem }) {
           <button
             className="focus-ring grid h-9 w-9 place-items-center rounded-full border border-cocoa/15 text-cocoa transition hover:border-red-300 hover:text-red-600"
             onClick={() => removeItem(item.productId)}
-            aria-label="Xoa san pham"
+            aria-label="Xóa sản phẩm"
           >
             <Trash2 size={17} />
           </button>

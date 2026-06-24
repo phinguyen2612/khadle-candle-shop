@@ -26,7 +26,7 @@ export default function ProductCard({ product }: { product: Product }) {
             {product.city}
           </span>
           <span className="rounded-full bg-moss/10 px-3 py-1 text-xs font-semibold text-moss">
-            {isOutOfStock ? "Het hang" : "Con hang"}
+            {isOutOfStock ? "Hết hàng" : "Còn hàng"}
           </span>
         </div>
         <div>
@@ -38,7 +38,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <p className="mt-2 min-h-12 text-sm leading-6 text-cocoa/68">{product.description}</p>
         </div>
         <div className="text-sm text-cocoa/70">
-          <span className="font-semibold text-cocoa">Mui huong:</span> {product.scent}
+          <span className="font-semibold text-cocoa">Mùi hương:</span> {product.scent}
         </div>
         <div className="flex items-center justify-between gap-3">
           <p className="text-lg font-bold text-cocoa">{formatCurrencyVND(product.price)}</p>
@@ -49,9 +49,9 @@ export default function ProductCard({ product }: { product: Product }) {
             href={`/products/${product.id}`}
             className="focus-ring inline-flex h-11 items-center justify-center rounded-full border border-cocoa/20 px-4 text-sm font-semibold text-cocoa transition hover:border-cocoa"
           >
-            Xem chi tiet
+            Xem chi tiết
           </Link>
-          <AddToCartButton product={product} className="px-4" label="Them gio" />
+          <AddToCartButton product={product} className="px-4" label="Thêm giỏ" />
         </div>
       </div>
     </article>

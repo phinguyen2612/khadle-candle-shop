@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     const serverTotal = calculateTotalAmount(order.items);
     if (serverTotal !== order.totalAmount) {
       return NextResponse.json(
-        { success: false, message: "Order total does not match cart items." },
+        { success: false, message: "Tổng tiền không khớp với giỏ hàng." },
         { status: 400 }
       );
     }
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Order API error:", error);
     return NextResponse.json(
-      { success: false, message: "Cannot process order at the moment." },
+      { success: false, message: "Hiện chưa thể xử lý đơn hàng." },
       { status: 500 }
     );
   }

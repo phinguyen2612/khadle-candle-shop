@@ -5,14 +5,14 @@ const fallbackImage = "/images/z7963231937978_859c7a6eafbeec266f9969dea9a5e661.j
 export const fallbackProducts: Product[] = [
   {
     id: "can-tho-memory",
-    name: "Can Tho Memory Candle",
-    city: "Can Tho",
-    scent: "Lua non, hoa buoi, gio song",
+    name: "Cần Thơ Memory Candle",
+    city: "Cần Thơ",
+    scent: "Lúa non, hoa bưởi, gió sông",
     price: 199000,
     volume: "200ml",
-    description: "Mot ngon nen diu dang goi nho nhung buoi chieu tren ben Ninh Kieu.",
+    description: "Một ngọn nến dịu dàng gợi nhớ những buổi chiều trên bến Ninh Kiều.",
     detail:
-      "Can Tho Memory Candle mo ra bang huong lua non va hoa buoi, sau do diu lai voi chut am ap cua go tuyet tung. Phu hop cho nhung khoanh khac cham, doc sach, viet nhat ky hoac tang nguoi yeu mien Tay.",
+      "Cần Thơ Memory Candle mở ra bằng hương lúa non và hoa bưởi, sau đó dịu lại với chút ấm áp của gỗ tuyết tùng. Phù hợp cho những khoảnh khắc chậm, đọc sách, viết nhật ký hoặc tặng người yêu miền Tây.",
     imageUrl: fallbackImage,
     status: "in_stock",
     orderUrl: "",
@@ -20,14 +20,14 @@ export const fallbackProducts: Product[] = [
   },
   {
     id: "sai-gon-night",
-    name: "Sai Gon Night Candle",
-    city: "Sai Gon",
-    scent: "Ca phe den, amber, mua dem",
+    name: "Sài Gòn Night Candle",
+    city: "Sài Gòn",
+    scent: "Cà phê đen, amber, mưa đêm",
     price: 229000,
     volume: "220ml",
-    description: "Am, sau va co chut nao nhiet nhu thanh pho sau con mua.",
+    description: "Ấm, sâu và có chút náo nhiệt như thành phố sau cơn mưa.",
     detail:
-      "Sai Gon Night Candle ket hop note ca phe den, amber va huong mua dem nhe. Mui huong co do sau vua du, hop voi phong lam viec, buoi toi nghe nhac hoac mot mon qua co ca tinh.",
+      "Sài Gòn Night Candle kết hợp note cà phê đen, amber và hương mưa đêm nhẹ. Mùi hương có độ sâu vừa đủ, hợp với phòng làm việc, buổi tối nghe nhạc hoặc một món quà có cá tính.",
     imageUrl: fallbackImage,
     status: "in_stock",
     orderUrl: "",
@@ -35,14 +35,14 @@ export const fallbackProducts: Product[] = [
   },
   {
     id: "da-lat-mist",
-    name: "Da Lat Mist Candle",
-    city: "Da Lat",
-    scent: "Thong xanh, lavender, suong som",
+    name: "Đà Lạt Mist Candle",
+    city: "Đà Lạt",
+    scent: "Thông xanh, lavender, sương sớm",
     price: 219000,
     volume: "200ml",
-    description: "Lanh nhe, sach va mong nhu lop suong qua doi thong.",
+    description: "Lạnh nhẹ, sạch và mỏng như lớp sương qua đồi thông.",
     detail:
-      "Da Lat Mist Candle mang huong thong xanh, lavender va chut musk mem. Mui huong nhe nha, thanh khiet, phu hop cho phong ngu, thien, yoga hoac nhung ngay can binh yen.",
+      "Đà Lạt Mist Candle mang hương thông xanh, lavender và chút musk mềm. Mùi hương nhẹ nhàng, thanh khiết, phù hợp cho phòng ngủ, thiền, yoga hoặc những ngày cần bình yên.",
     imageUrl: fallbackImage,
     status: "out_of_stock",
     orderUrl: "",
@@ -133,7 +133,7 @@ export async function getProducts(): Promise<Product[]> {
 
   try {
     const response = await fetch(csvUrl, { next: { revalidate: 300 } });
-    if (!response.ok) throw new Error("Cannot fetch product CSV");
+    if (!response.ok) throw new Error("Không thể tải CSV sản phẩm");
 
     const csv = await response.text();
     const rows = parseCSV(csv);

@@ -6,17 +6,17 @@ export function calculateTotalAmount(items: Order["items"]) {
 }
 
 export function validateOrder(order: Partial<Order>) {
-  if (!order.customer) return "Missing customer information.";
-  if (!order.customer.fullName?.trim()) return "Full name is required.";
-  if (!order.customer.phone?.trim()) return "Phone number is required.";
-  if (!isValidPhone(order.customer.phone)) return "Phone number is invalid.";
-  if (!order.customer.address?.trim()) return "Address is required.";
-  if (!Array.isArray(order.items) || order.items.length === 0) return "Cart is empty.";
+  if (!order.customer) return "Thiếu thông tin khách hàng.";
+  if (!order.customer.fullName?.trim()) return "Vui lòng nhập họ và tên.";
+  if (!order.customer.phone?.trim()) return "Vui lòng nhập số điện thoại.";
+  if (!isValidPhone(order.customer.phone)) return "Số điện thoại chưa hợp lệ.";
+  if (!order.customer.address?.trim()) return "Vui lòng nhập địa chỉ nhận hàng.";
+  if (!Array.isArray(order.items) || order.items.length === 0) return "Giỏ hàng đang trống.";
   if (order.items.some((item) => !item.productId || item.quantity < 1 || item.price < 0)) {
-    return "Order items are invalid.";
+    return "Sản phẩm trong đơn hàng chưa hợp lệ.";
   }
   if (typeof order.totalAmount !== "number" || order.totalAmount <= 0) {
-    return "Total amount is invalid.";
+    return "Tổng tiền chưa hợp lệ.";
   }
   return null;
 }

@@ -18,12 +18,12 @@ const sans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
-  title: "City Memory Candles | Nen thom ky uc thanh pho",
+  title: "City Memory Candles | Nến thơm ký ức thành phố",
   description:
-    "Website MVP ban nen thom handmade theo concept ky uc thanh pho, lay du lieu san pham tu Google Sheet CSV.",
+    "Website MVP bán nến thơm handmade theo concept ký ức thành phố, lấy dữ liệu sản phẩm từ Google Sheet CSV.",
   openGraph: {
     title: "City Memory Candles",
-    description: "Nen thom luu giu ky uc thanh pho.",
+    description: "Nến thơm lưu giữ ký ức thành phố.",
     images: ["/images/z7963231937978_859c7a6eafbeec266f9969dea9a5e661.jpg"]
   }
 };

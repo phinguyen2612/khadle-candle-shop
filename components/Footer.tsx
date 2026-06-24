@@ -7,13 +7,13 @@ export default function Footer() {
         <div>
           <p className="font-display text-2xl font-semibold">City Memory Candles</p>
           <p className="mt-3 max-w-xl text-sm leading-6 text-cream/78">
-            Nen thom handmade luu giu nhung ky uc than quen cua thanh pho qua mui huong,
-            chat lieu va nhung khoanh khac cham.
+            Nến thơm handmade lưu giữ những ký ức thân quen của thành phố qua mùi hương,
+            chất liệu và những khoảnh khắc chậm.
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm text-cream/78 md:items-end">
           <Link href="/products" className="hover:text-white">
-            San pham
+            Sản phẩm
           </Link>
           <span>Facebook: citymemorycandles</span>
           <span>Instagram: @citymemorycandles</span>
